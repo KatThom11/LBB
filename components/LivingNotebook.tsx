@@ -29,6 +29,7 @@ export default function LivingNotebook({ proposal }: { proposal: string }) {
   const [pending, setPending] = useState(false); const [notice, setNotice] = useState(''); const [error, setError] = useState('');
   const [noteDraft, setNoteDraft] = useState<NoteDraft>(emptyDraft); const [selectedNotes, setSelectedNotes] = useState<string[]>([]); const [shareConsent, setShareConsent] = useState(false);
   const abortRef = useRef<AbortController | null>(null); const busyRef = useRef(false);
+  const previousView = useRef<View>('chat');
   const composer = useRef<HTMLTextAreaElement>(null); const scroll = useRef<HTMLDivElement>(null); const follow = useRef(true);
   const conversation = workspace.conversations.find(c => c.id === workspace.activeId);
   const activeJourney = conversation?.currentJourney;
@@ -47,7 +48,13 @@ export default function LivingNotebook({ proposal }: { proposal: string }) {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(workspace)); setStorageError(false); } catch { setStorageError(true); }
   }, [workspace, ready, recoveryRaw]);
   useEffect(() => { document.documentElement.dataset.contrast = workspace.contrast ? 'high' : 'normal'; document.documentElement.dataset.textSize = workspace.textSize; }, [workspace.contrast, workspace.textSize]);
-  useEffect(() => { if (follow.current && scroll.current) scroll.current.scrollTop = scroll.current.scrollHeight; }, [conversation?.messages, view]);
+  useEffect(() => {
+    const pane = scroll.current; if (!pane) return;
+    if (view !== 'chat') { if (previousView.current !== view) pane.scrollTop = 0; }
+    else if (!conversation?.messages.length) pane.scrollTop = 0;
+    else if (follow.current) pane.scrollTop = pane.scrollHeight;
+    previousView.current = view;
+  }, [conversation?.messages, view]);
   function updateConversation(conversationId: string, change: (c: Conversation) => Conversation) { setWorkspace(w => ({ ...w, conversations: w.conversations.map(c => c.id === conversationId ? { ...change(c), updatedAt: now() } : c) })); }
   function ensureConversation(): Conversation {
     if (conversation) return conversation;
@@ -56,9 +63,9 @@ export default function LivingNotebook({ proposal }: { proposal: string }) {
   function stop() { abortRef.current?.abort(); setNotice('The Cart has stopped. Your words and notes remain.'); }
   function newConversation() {
     if (workspace.conversations.length >= 50) { setError('This device has reached 50 conversations. Export your workspace before making room in browser storage.'); return; }
-    stop(); const fresh = freshConversation(); setWorkspace(w => ({ ...w, activeId: fresh.id, conversations: [...w.conversations, fresh] })); setInput(''); setView('chat'); setMenuOpen(false); setError(''); setSelectedNotes([]); setShareConsent(false); setNotice('A fresh conversation. Your earlier conversations and notebook entries are kept.'); composer.current?.focus();
+    stop(); follow.current = true; const fresh = freshConversation(); setWorkspace(w => ({ ...w, activeId: fresh.id, conversations: [...w.conversations, fresh] })); setInput(''); setView('chat'); setMenuOpen(false); setError(''); setSelectedNotes([]); setShareConsent(false); setNotice('A fresh conversation. Your earlier conversations and notebook entries are kept.'); composer.current?.focus();
   }
-  function revisit(c: Conversation) { stop(); setWorkspace(w => ({ ...w, activeId: c.id })); setView('chat'); setMenuOpen(false); setSelectedNotes([]); setShareConsent(false); setError(''); }
+  function revisit(c: Conversation) { stop(); follow.current = true; setWorkspace(w => ({ ...w, activeId: c.id })); setView('chat'); setMenuOpen(false); setSelectedNotes([]); setShareConsent(false); setError(''); }
   function startJourney(journey: JourneyId) {
     const c = ensureConversation(); const definition = journeyById(journey);
     updateConversation(c.id, value => ({ ...value, currentJourney: journey, journeys: { ...value.journeys, [journey]: value.journeys[journey] || freshProgress() }, messages: value.messages.length < 200 && !value.journeys[journey] ? [...value.messages, makeMessage('assistant', `We can take a short path through ${definition.title}. Your conversation stays here, and your notebook comes with you.${!definition.available ? ' This is a framework only; the manuscript has not been supplied.' : ''}`, 'scripted')] : value.messages }));

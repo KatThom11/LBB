@@ -113,6 +113,8 @@ test('live notebook context is excluded by default and requires per-reply consen
 
 test('mobile menu, notebook dialog, keyboard return, and layout remain usable', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 }); await page.goto('/');
+  await expect(input(page)).toBeEnabled();
+  expect(await page.locator('.conversation-scroll').evaluate(el => el.scrollTop)).toBe(0);
   const menu = page.getByRole('button', { name: 'Open navigation' }); await menu.click(); await page.keyboard.press('Escape'); await expect(menu).toBeFocused();
   await menu.click(); await page.getByRole('dialog').getByRole('button', { name: 'The Full Color Atlas', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'The Full Color Atlas', exact: true })).toBeVisible();

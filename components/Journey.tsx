@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, BookmarkPlus, CornerUpLeft, Pause, ScanSearch, Send, Sparkles, Square } from 'lucide-react';
 import { journeyById, provenanceLabels, sources } from '@/lib/content';
 import type { JourneyId, JourneyProgress } from '@/lib/schema';
@@ -10,13 +10,18 @@ export default function Journey({ id, progress, onUpdate, onSave, onReturn, onSo
 }) {
   const definition = journeyById(id); const step = definition.steps[progress.step];
   const [saved, setSaved] = useState(false); const [showSources, setShowSources] = useState(false); const [holding, setHolding] = useState(false);
+  const initialStep = useRef(true);
+  useEffect(() => {
+    if (initialStep.current) { initialStep.current = false; return; }
+    document.getElementById('journey-step-title')?.focus();
+  }, [progress.step]);
   function save() { if (!progress.thought.trim()) return; onSave(progress.thought, id === 'trial' ? 'Questions' : 'My Theory'); setSaved(true); }
   return <section className={`journey-view ${definition.color}`} aria-label={`${definition.title} journey`}>
     <div className="journey-top"><button className="text-button" onClick={onReturn}><CornerUpLeft size={14} /> Back to conversation</button><span>{definition.duration}</span></div>
     <div className="journey-title"><span className="eyebrow">AN OPTIONAL JOURNEY WITHIN LBB</span><h1>{definition.title}</h1><p>{definition.subtitle}</p></div>
     <nav className="journey-steps" aria-label="Journey steps">{definition.steps.map((s, i) => <button key={s.title} aria-current={progress.step === i ? 'step' : undefined} onClick={() => { onUpdate({ step: i }); setShowSources(false); }}><span>0{i + 1}</span>{s.title}</button>)}</nav>
     {!definition.available && <p className="content-notice">Journey framework only. The manuscript has not been supplied or ingested. No passage, character, or testimony is presented as coming from the book.</p>}
-    <article className="journey-page"><div className="journey-page-label"><span className="eyebrow">{step.eyebrow}</span><span className="provenance-badge">{provenanceLabels[step.kind]}</span></div><h2>{step.title}</h2><p className="journey-reading">{step.body}</p>
+    <article className="journey-page"><div className="journey-page-label"><span className="eyebrow">{step.eyebrow}</span><span className="provenance-badge">{provenanceLabels[step.kind]}</span></div><h2 id="journey-step-title" tabIndex={-1}>{step.title}</h2><p className="journey-reading">{step.body}</p>
       {step.sourceIds.length > 0 && <div className="journey-source-links">{step.sourceIds.map(sourceId => { const source = sources.find(s => s.id === sourceId)!; return <button className="text-button" key={sourceId} onClick={() => setShowSources(!showSources)}><ScanSearch size={13} /> {source.author} · {source.location}</button>; })}</div>}
       {showSources && <div className="source-examination">{step.sourceIds.map(sourceId => { const s = sources.find(x => x.id === sourceId)!; return <section key={s.id}><strong>{s.title}</strong><p>{s.text}</p><small>{s.limitation}</small></section>; })}<button className="text-button" onClick={onSources}>Open the source register <ArrowRight size={13} /></button></div>}
       {id === 'refraction' && progress.step === 2 && <><div className="lab-actions"><button onClick={onGenerate}><Sparkles size={17} />GENERATE</button><button onClick={() => setShowSources(true)}><ScanSearch size={17} />VERIFY</button><button onClick={onRoute}><Send size={17} />ROUTE</button><button onClick={() => { setHolding(true); onUpdate({ disposition: 'Held as provisional' }); }}><Pause size={17} />HOLD</button><button onClick={onStop}><Square size={16} />STOP</button></div><p className="fine-print">Disposition: {progress.disposition}. No source has been automatically verified.</p>{holding && <><label className="form-label" htmlFor="hold-reason">Reason for holding judgment</label><textarea id="hold-reason" maxLength={2000} rows={3} value={progress.reason} onChange={e => onUpdate({ reason: e.target.value })} /></>}</>}
