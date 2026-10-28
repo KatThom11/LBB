@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101e22" />
+  <meta name="description" content="The Full Color Atlas: an interactive museum of language, imagination, human knowledge, and judgment. Follow your curiosity with the Exhibit Cart." />
+  <title>The Full Color Atlas · LBB</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell" id="app-shell">
+    <a class="skip-link" href="#chat-input">Skip to Ask the Cart</a>
+    <header class="topbar">
+      <a class="brand" href="#home" id="brand-link" aria-label="The Full Color Atlas home">
+        <span class="brand-mark" aria-hidden="true">✧</span>
+        <span class="brand-words"><strong>THE FULL COLOR ATLAS</strong><small>LANGUAGE BEYOND BINARY · LBB</small></span>
+      </a>
+      <nav class="top-actions" aria-label="Museum resources">
+        <button class="header-link" id="menu-toggle" aria-controls="navigation-overlay" aria-haspopup="dialog" aria-expanded="false">Explore <span aria-hidden="true">＋</span></button>
+        <button class="header-link paper-link" data-panel="research" id="paper-header">Read the White Paper</button>
+        <button class="header-link notebook-link" data-panel="notebook">My Notebook <span id="note-count" class="count-pill">0</span></button>
+        <button class="icon-btn" id="settings-button" data-panel="settings" aria-label="Reading and privacy settings">⚙</button>
+      </nav>
+    </header>
+    <div class="museum-caption"><span>A MUSEUM FOR THE CURIOUS. <span class="caption-extra">NO PRESCRIBED ROUTE.</span></span><span id="model-state" class="tiny-pill" role="status">Checking conversation mode…</span></div>
+    <main id="main" class="main-stage">
+      <div class="visit-toolbar" id="visit-toolbar" hidden>
+        <div class="guide-identity"><img id="guide-portrait" src="/assets/cart/welcoming.webp" alt="" width="44" height="44" /><div><strong>The Exhibit Cart</strong><span>I carry the exhibits. You decide what they establish.</span></div></div>
+        <div class="visit-actions"><button data-panel="connections">Explore connections <span aria-hidden="true">→</span></button><button id="fresh-question">New question <span aria-hidden="true">＋</span></button></div>
+      </div>
+      <div id="stage-inner" class="stage-inner">
+        <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+          <div class="welcome-scene">
+            <div class="welcome-copy">
+              <span class="overline">AN OPEN INVITATION TO WONDER</span>
+              <h1 id="welcome-title">What if every question<br /><em>opened a world?</em></h1>
+              <p class="welcome-subtitle">Language, perception, history, possibility.<br />Follow a question. See what it opens.</p>
+              <div class="cart-intro"><span class="overline">YOUR GUIDE · THE EXHIBIT CART</span><p>“I collect questions and occasionally lose an argument to my own furniture. <strong>What are you curious about?</strong>”</p></div>
+              <button class="ask-cart-link" data-action="conversation">Ask the Cart <span aria-hidden="true">↓</span></button>
+            </div>
+            <button class="cart-portrait" data-action="conversation" aria-label="Meet the Exhibit Cart. Ask your own question.">
+              <img src="/assets/cart/welcoming.webp" alt="A gold and teal museum cart with four smiling drawers, one open to share an exhibit, and a butterfly emblem." width="640" height="800" fetchpriority="high" />
+              <span class="portrait-label"><span aria-hidden="true">✧</span> THE EXHIBIT CART <span aria-hidden="true">✧</span></span>
+            </button>
+          </div>
+          <div class="starting-points"><div class="starting-heading"><span class="overline">A FEW SPARKS, IF YOU NEED ONE</span><span>Or bring a question of your own.</span></div><div class="starter-grid" id="starter-grid" aria-label="Some places to begin"></div></div>
+          <p class="gentle-offer" id="research-offer"><span>There's an experiment behind this museum. You're welcome to question that, too.</span> <button data-panel="research">Read the White Paper</button> <span aria-hidden="true">·</span> <button data-panel="invitation">Open Invitation</button><small>The updated paper is in development; the research outline is available now.</small></p>
+        </section>
+        <section id="conversation" class="conversation" aria-label="Conversation with the Exhibit Cart" role="log" aria-live="polite" aria-relevant="additions" hidden></section>
+      </div>
+      <div class="composer-wrap">
+        <div id="reply-status" class="reply-status" role="status" aria-live="polite"></div>
+        <form id="chat-form" class="chat-composer" aria-label="Ask the Exhibit Cart">
+          <label for="chat-input" class="composer-label">YOUR QUESTION, YOUR WAY</label>
+          <div class="composer-entry"><textarea id="chat-input" rows="2" maxlength="3500" placeholder="Ask the Cart anything. Or start with “what if…”"></textarea><button id="stop-button" type="button" class="stop-btn" hidden>Stop</button><button type="submit" class="send-btn" id="send-button" aria-label="Send to the Exhibit Cart"><span aria-hidden="true">↑</span></button></div>
+          <div class="composer-footer"><span>No right starting point. No required conclusion.</span><span class="keyboard-hint">Enter to send · Shift + Enter for a new line</span></div>
+        </form>
+        <p class="privacy-line" id="privacy-line">Scripted preview · Your notebook stays in this browser.</p>
+      </div>
+    </main>
+    <footer class="museum-footer"><span>The sentence is not the world. But it can change it.</span><button data-panel="invitation">Open Invitation</button><button data-panel="impact">Research &amp; Real-World Impact</button></footer>
+  </div>
+  <div class="navigation-overlay" id="navigation-overlay" hidden>
+    <button class="rail-backdrop" id="rail-backdrop" aria-label="Close museum navigation" tabindex="-1"></button>
+    <aside class="museum-rail" id="museum-rail" role="dialog" aria-modal="true" aria-labelledby="navigation-title" tabindex="-1">
+      <div class="rail-inner">
+        <div class="rail-heading"><span class="overline">THE FULL COLOR ATLAS</span><button class="icon-btn" id="close-navigation" aria-label="Close museum navigation">×</button></div>
+        <h2 id="navigation-title">Begin anywhere.<br /><em>Follow what matters.</em></h2>
+        <button class="new-visit" id="new-visit">A fresh question <span aria-hidden="true">＋</span></button>
+        <nav class="rail-nav" aria-label="Explore the Atlas">
+          <button class="nav-link" data-action="conversation"><span aria-hidden="true">✧</span> Ask the Exhibit Cart</button>
+          <button class="nav-link" data-panel="cart"><span aria-hidden="true">☺</span> Meet the Exhibit Cart</button>
+          <button class="nav-link" data-panel="connections"><span aria-hidden="true">◎</span> Explore connections</button>
+          <button class="nav-link" data-panel="archive"><span aria-hidden="true">◈</span> The Archive</button>
+          <button class="nav-link" data-action="cross-examine"><span aria-hidden="true">⚖</span> Cross-Examination</button>
+          <button class="nav-link" data-panel="banter"><span aria-hidden="true">✦</span> The Banter Bots</button>
+          <button class="nav-link" data-panel="simulation"><span aria-hidden="true">◇</span> Simulation Wing</button>
+          <button class="nav-link" data-panel="notebook"><span aria-hidden="true">▤</span> My Living Notebook</button>
+        </nav>
+        <div class="rail-divider"></div>
+        <span class="overline">THE EXPERIMENT BEHIND THE ART</span>
+        <button class="nav-link muted" data-panel="research">Read the White Paper</button>
+        <button class="nav-link muted" data-panel="invitation">Open Invitation</button>
+        <button class="nav-link muted" data-panel="impact">Research &amp; Real-World Impact</button>
+        <div class="rail-divider"></div>
+        <div class="recent-header"><span class="overline">YOUR EXPLORATIONS</span><button id="export-button" aria-label="Export your locally saved notebook and conversations">Export ↓</button></div>
+        <div id="thread-list" class="thread-list"></div>
+        <p class="rail-footer">Questions welcome. Conclusions negotiable.</p>
+      </div>
+    </aside>
+  </div>
+  <div id="overlay" class="overlay" hidden>
+    <div class="drawer-backdrop" data-action="close-drawer"></div>
+    <section class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1"><div class="drawer-header"><span class="overline" id="drawer-kicker">INSIDE THE ATLAS</span><button id="close-drawer" class="icon-btn" aria-label="Close panel">×</button></div><h2 id="drawer-title"></h2><div id="drawer-body" class="drawer-body"></div></section>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

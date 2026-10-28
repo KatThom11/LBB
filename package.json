@@ -1,0 +1,13 @@
+{
+  "name": "full-color-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An Atlas-first interactive museum of language and human judgment",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js",
+    "check": "node --check app.js && node --check api/chat.js && node --check server.js && node --check content/atlas-content.js && node --check api/atlas-system.js"
+  },
+  "engines": {"node": ">=22"}
+}
