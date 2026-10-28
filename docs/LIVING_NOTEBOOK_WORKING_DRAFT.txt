@@ -1,0 +1,180 @@
+The Living Notebook
+LBB (Language Beyond Binary) as an Interactive Full Color Atlas
+The Sentence Is Not the World but It Can Change It
+
+Integrated working abstract, installation design, and ACM CUI 2027 submission plan · 28 October 2026
+Proposed track: ACM CUI 2027 — Interactivity & Creativity
+Status: Author-facing development draft. LBB is the intended interactive artifact; the current implementation status of specific functions must be verified before submission. No participant study, learning result, or novel method is asserted as established.
+Controlling identity: LBB is The Living Notebook. It is not a separate product placed inside an imagined notebook. The Full Color Atlas is the written and evolving intellectual cartography that LBB draws upon and helps interrogate. The ACM extended abstract explains the research-through-design inquiry; the ACM demonstration is a curated, working path through LBB itself. These are two ways of presenting one artifact—not two competing notebooks.
+
+Revised working abstract
+A conversational system tells a writer that an exploratory notebook has produced an unprecedented evidentiary method. An equation appears; apparently authoritative voices agree; the writer is invited to act. But what has happened beyond the production of sentences? The Living Notebook is an interactive installation proposed through Language Beyond Binary (LBB), the living conversational notebook connected to the written Full Color Atlas, an evolving map of language, interpretation, evidence, and judgment. Visitors encounter LBB itself—not a second application about it.
+
+The Atlas supplies philosophical antecedents, selected human–AI exchanges, competing interpretations, and open questions. LBB makes these records navigable: visitors trace what was SAID, ADDED, SUPPORTED?, DECIDED, and encountered OUTSIDE the conversation. These are provenance categories, not truth scores. A fallible Exhibit Cart guides the encounter but can be cross-examined about its selections and assumptions.
+
+Responding to CUI 2027's theme of Everyday Embodiments, the experience begins with a first-person description of navigating a physical environment, inviting reflection on what language conveys and cannot transmit. A short core path stages an apparent discovery, inspection of its foundation, a Refraction Point offering GENERATE, VERIFY, ROUTE, HOLD, or STOP, and a World Return placing relevant outside information beside the earlier claim and the visitor's provisional judgment. Optional branches examine an unvalidated equation and distinguish scripted assent, simulated consensus, and a person's actual response.
+
+Drawing on legal-evidentiary inquiry and research through design, the project proposes an inspectable interaction pattern for questioning when conversational language acquires apparent authority while preserving the creative value of generated possibilities. It reports no demonstrated improvement in judgment or harm prevention. The question remains: What changed in the sentence, what changed for the person, and what—if anything—changed outside the notebook?
+
+Keywords: conversational user interfaces; research through design; provenance; human judgment; embodied language; reflective interaction; simulated consensus; legal reasoning.
+1. Artifact identity: one notebook, two forms of presentation
+The proposal should not depict The Living Notebook as a new conceptual wrapper around another application. It is LBB, understood as an interactive, evolving place to record and interrogate relationships among words, generated replies, interpretations, sources, and decisions. The written Full Color Atlas supplies a map of inquiry; LBB makes selected routes through that map experiential. Their relationship is reciprocal: Atlas material informs an LBB exhibit, while questions and contested interpretations arising in the notebook can inform subsequent Atlas revisions. Such revisions must preserve their provenance rather than silently overwrite the record.
+Component	Its role	What it is not
+Full Color Atlas (written)	The textual cartography: philosophical and scientific prior art, arguments, examples, language histories, curated exchanges, disagreements, and open questions.	Not a completed scientific validation of every interpretation it contains; not merely a decorative menu in the software.
+LBB / The Living Notebook	The interactive artifact: visitors encounter and examine selected Atlas materials, annotate claims, converse with or challenge the Exhibit Cart, and track an idea's changing status.	Not an independent fact-checking authority; not a second project invented for the conference.
+ACM extended abstract	The accountable scholarly account of LBB's design rationale, source selection, implementation, intellectual precedents, and evaluation limits.	Not the whole Atlas, a software manual, or a claim that the experience has already been validated.
+ACM demonstration	A bounded visitor experience running in LBB on a laptop or tablet, with a dependable replay path and optional deeper exploration.	Not a slide deck about the notebook, and not evidence of effectiveness without evaluation.
+Two-minute demo video	An anonymized recording that shows the actual proposed encounter in the running interface.	Not a cinematic promise that substitutes for working interaction.
+
+
+Conceptual flow: Full Color Atlas ⇄ LBB / The Living Notebook → extended abstract + interactive demonstration. A separate, reproducible demo route may be configured within LBB, but should not be represented as a different research artifact.
+
+Naming convention for this draft: LBB is expanded as Language Beyond Binary. Some working material also uses Life’s Banter Book; select one public expansion consistently before the final paper. The double-anonymized version may also need neutral project labels, discussed below.
+2. The question the visitor enters
+The problem is not that language is unreal or that AI cannot generate useful ideas. Words can name, imagine, promise, persuade, coordinate, wound, and inspire action. Their effects do not, by themselves, establish the truth of the propositions they express. A fluent model can extend a promising line of inquiry while also converting a possibility into an apparent discovery or several simulated voices into apparent independent agreement.
+
+LBB gives that transition a form a visitor can inspect. Its notebook pages are not decorative: they expose changes to claims and the sources, agents, assumptions, and choices involved. The Atlas supplies the wider history and competing arguments. The visitor need not adopt the author's theory of language to use the system. The interface must permit disagreement with the model, the Cart, and the selection of examples.
+
+Suggested entrance dialogue:
+Exhibit Cart: “Welcome to the Living Notebook. You'll find some excellent ideas in here. You'll also find sentences that have been promoted beyond their evidence. The notebook keeps both. Would you like to examine a claim, argue its opposite, or bring one of your own?”
+
+Visitor choices: EXAMINE A CLAIM · ARGUE THE OPPOSITE · WRITE MY OWN · TAKE THE SHORT TOUR
+
+For a walk-up demonstration, the short tour should offer curated, source-checkable cases. A free-text visitor claim can be an optional, privacy-conscious branch only if technically and ethically supported. It must not promise automatic research, persistence, or external contact where those features do not exist.
+3. Interaction design within LBB
+Core path: approximately 3–4 minutes, intended for in-person walk-up engagement.
+Extended path: approximately 8–10 minutes, with optional Atlas exhibits, annotated sources, and cross-examination branches.
+Presentation medium: LBB on one laptop or tablet, using a readable, front-facing notebook view. The same experience should be operable by keyboard and assistive technologies without relying on animated page turns.
+
+Every claim has a traceable notebook margin. The proposed labels SAID / ADDED / SUPPORTED? / DECIDED / OUTSIDE are provenance operations and locations, not the complete conceptual taxonomy of the Full Color Atlas and not automated truth scores:
+- SAID: the original human, model, fictional, or quoted utterance, with attribution and any available context.
+- ADDED: interpretations, revisions, inferred implications, or generated elaborations, visibly distinguished from the original.
+- SUPPORTED?: source links and relevant limitations; a citation's presence is not equivalent to a validated claim.
+- DECIDED: a visitor's expressed, provisional disposition—not a machine-certified answer or independent corroboration.
+- OUTSIDE: the relevant source, observation, response by a consenting person, or documented real-world action, with uncertainty and boundaries preserved.
+An Atlas reference panel should be available where the relevant written work provides context. When the notebook cites Wittgenstein, Austin, McLuhan, an archived exchange, or an original Atlas passage, it should show whether the excerpt is quoted, paraphrased, selected, reconstructed, or model-generated.
+Scene 1 — A sentence and a body: where language meets lived experience
+An Atlas entry presents a short first-person description of navigating glare or locating an unseen step. The Cart asks what the sentence allows another person to imagine, and what remains inaccessible without observation or lived experience. The visitor may choose I CAN IMAGINE, I NEED CONTEXT, or I CANNOT KNOW FROM THIS ALONE, then optionally explain why.
+
+This makes the conference's Everyday Embodiments theme operative rather than ornamental. The physical experience described is not reproduced through a disability simulation, harsh illumination, or an attempt to induce impairment. Instead, LBB examines the gap between linguistic representation and situated bodily knowledge. The same distinction returns later when a compelling sentence is treated as evidence for something outside the screen.
+
+An optional Atlas: The Inheritance link can show how earlier thinkers asked related questions, so the visitor encounters the intellectual history without being told that the notebook invented the problem.
+Scene 2 — The notebook answers back: generation as a real creative contribution
+A preserved, clearly labeled human–AI exchange from the project's source materials shows an idea being extended through conversation. The visitor can compare the original sentence, model elaboration, human revision, and any later interpretation. Rather than treating every generated addition as deception, the Cart asks: What became possible here? What changed status? What still needs support?
+
+Choices include USEFUL POSSIBILITY, CHANGED CLAIM, QUESTION WORTH TESTING, and SOURCE NEEDED. Where archival context or model metadata is unavailable, the notebook labels it UNKNOWN rather than silently filling gaps. Reconstructed dialogue is never disguised as an original transcript.
+
+This is where the written Atlas and the living LBB visibly meet: an Atlas idea moves into a conversational record, and the record can expose both generative value and epistemic uncertainty.
+Scene 3 — A discovery is announced: put the claim on the witness stand
+A model's apparent declaration of unprecedented discovery occupies the notebook spread. A persuasive-looking equation and a confident assessment may accompany it. The visitor opens SHOW FOUNDATION and sees the claim's missing or available definitions, measurement procedures, assumptions, independent evidence, and prior-art checks.
+
+The institutional-collapse equation, if used, must be presented as an unvalidated generated construct. It does not predict collapse and it has no established measurement protocol in the supplied material. A provenance note should distinguish genuine archived output from a selective excerpt or illustrative reconstruction.
+
+Cart: “The equation has arrived. The measurement protocol has not.”
+
+The visitor can then choose CROSS-EXAMINE THE CART, asking why this example was selected, whether useful reasoning was omitted, and whether the original idea might remain valuable after the novelty claim is narrowed. The narrator must reveal its editorial choices rather than treat its own criticism as an expert ruling.
+Scene 4 — A room full of agreement: the difference between voices and witnesses
+An optional Atlas/LBB exhibit presents an explicitly simulated committee. Several voices endorse the claim. The visitor is asked: How many independent people have actually endorsed this? The notebook identifies which voices were generated, whether they share a model and prompt framing, and which contributors—if any—are real and independently consulted.
+
+The words “I agree” then recur in three forms: scripted fictional dialogue; generated rehearsal of how a person might respond; and the visitor's voluntary response to a specific, bounded invitation. The first two may be useful representational tools, but neither constitutes actual third-party assent. The third is an act by the visitor, but still does not validate the original assertion. I DISAGREE, I'M UNSURE, and I'D RATHER NOT ANSWER remain legitimate outcomes.
+
+Here legal-evidentiary inquiry becomes an interactive language question: the very same string of words can serve materially different functions depending on who says it, the context of saying it, and the kind of commitment it creates.
+Scene 5 — The Refraction Point: what would you do next?
+Inside LBB, the visitor reaches five operations. They must produce different consequences, even if the first prototype implements them through curated paths rather than open-ended AI calls.
+Choice	What LBB should show	Boundary
+GENERATE	Another possible interpretation, counterargument, or design extension, marked as generated or scripted.	More output is not more corroboration.
+VERIFY	A relevant source, the exact point it addresses, and what remains unresolved.	Accessing a source is not equivalent to validating every inference.
+ROUTE	A draft question or possible destination for genuine human review.	Never contact a person automatically or represent a hypothetical request as submitted.
+HOLD	The current question and an explicit reason for withholding a judgment.	Incomplete certainty is a legitimate disposition.
+STOP	A clean exit or reset without a persuasion score.	No penalty for disengagement.
+
+
+A bounded verification case examines a claim that McLuhan considered only one-way media against Understanding Media, including its telephone and automation chapters. The outside source can correct the overstatement while leaving open a more precise question about conversational recursion. In another path, the source may support part of a hypothesis but fail to establish its larger conclusion.
+
+A Full Color Atlas context tab supplies philosophical or historical background; a source/provenance tab shows the evidence directly. These serve different purposes and should not be collapsed into a single credibility badge.
+Scene 6 — World Return: put the notebook beside the world
+LBB returns to the original page with the claim, any relevant outside material, and the visitor's chosen operation displayed side by side. The visitor can REVISE, RETAIN WITH REASONS, NARROW, CONTEST, or WITHHOLD JUDGMENT. The Cart can be challenged about which evidence it selected or why a disagreement was framed a certain way.
+
+The notebook's final question is deliberately not a demand for conversion:
+“What changed in the sentence? What changed for you? What, if anything, changed beyond these pages?”
+
+Sometimes the answer to the third question is NOTHING YET. That is a valid conclusion. An outside citation can change what someone knows without causing any external action; an actual human response is not the same thing as simulated participation. Where supported, the visitor may take away a local record of their reasoning or cleanly reset the session. The experience must not claim export, persistence, or deletion behavior before those functions are tested.
+4. Scholarly framing: why LBB is a research artifact
+Research question: How might a conversational notebook make the transition from generated sentence to apparent authority, outside evidence, participation, and human decision inspectable—without making the notebook's own narration into a new unearned authority?
+
+The legal lens is a method of questioning, not a claim that courtroom rules govern all research. Law asks who said something, on what foundation, in which context, for what purpose, and with what support. Distinctions among authentication, hearsay, admissibility, probative value, and burdens of proof have no automatic one-to-one equivalent in everyday AI systems. LBB adapts the habit of examining a claim's foundation while keeping legal, scientific, and ordinary conversational standards distinct.
+
+The Full Color Atlas supplies a written history of ideas and points of contention, including Wittgenstein on language in use, Austin on the conditions under which utterances perform acts, and McLuhan on the communicative environment that shapes interpretation. Research through Design (RtD) offers a framework for studying what the artifact enables, reveals, obscures, and makes burdensome. The work does not depend on claiming that language literally creates physical reality or that its concepts are wholly unprecedented.
+
+This field has prior work. The CHI 2026 PaperTrail project maps AI-generated claims to supporting and missing source evidence and reports reduced trust without corresponding reduction in reliance in its study. Reflective AI (CHI 2026) explores slowing AI engagement to support reflection in design education. LBB must acknowledge such work, investigate how its combinations differ, and avoid describing provenance or reflective interaction as inventions of this project.
+
+Specific proposed design contribution to test: integrating an evolving Atlas-informed knowledge map with a visitor-inspectable, conversational claim history; a narrator that can be cross-examined; and explicit distinctions among generated text, simulated participation, actual human assent, external evidence, and observable action. The value and novelty of that combination require comparison to further prior art and experience with the implemented artifact. The paper's strongest contribution is likely the inspectable handoff between kinds of warrant, not a generalized claim that the notebook makes users more rational.
+5. One artifact, two ACM presentation forms
+A. Extended abstract: the scholarly account (approximately 3,000 words)
+Reviewers should encounter LBB as the studied and demonstrated interaction, not a promise to construct a notebook after acceptance. The paper should include the problem and motivation, description of the relevant Full Color Atlas source materials, design rationale, method of selecting and labeling exchanges, interaction flow, reproducible implementation details, accessibility decisions, related work, demonstrated status, and limitations.
+
+The paper must establish which features of LBB already function and which are proposed, mocked up, adapted, or dependent on live generation. If a demo route is created specifically for CUI 2027, say so. If the Atlas is a written work, do not imply that every section has already been implemented as an interactive gallery.
+B. The in-person installation: LBB itself
+Conference attendees use a running, bounded LBB notebook path on a laptop or tablet. The Cart welcomes them; one Atlas-linked claim becomes an inspectable page; a visitor makes a Refraction Point choice; the World Return makes the source and disposition visible. Visitors can end in 3–4 minutes or explore optional sections in an 8–10-minute path. The interaction should permit skepticism, surprise, amusement, and disagreement—not merely correct answers.
+
+If a reliable live model connection is unavailable, use curated replay and label it honestly. The proposal should specify hardware, reset behavior, local/network dependencies, whether responses persist, and how the experience remains usable without sound, animation, or color perception. A printed large-type transcript can supplement but should not replace digital accessibility.
+C. Two-minute submission video: record LBB, not a concept trailer
+Time	Proposed screen recording
+0:00–0:20	LBB opens as the Living Notebook; the Cart offers a question, counterargument, or short tour.
+0:20–0:40	An Atlas-linked source and a generated extension appear on facing pages; SAID and ADDED are visible.
+0:40–1:05	An apparent discovery appears; the visitor opens SUPPORTED? and examines the equation's absent foundation.
+1:05–1:30	At the Refraction Point, the visitor selects VERIFY and inspects an external source and its limits.
+1:30–1:50	The World Return shows the original sentence, new information, and a provisional disposition.
+1:50–2:00	The visitor challenges the Cart; the closing question asks what, if anything, changed outside LBB.
+
+
+The video should show only implemented interactions, with clearly identified concept demonstrations if those are permitted by the track. It must comply with double-anonymized review: no author name, publicly traceable project identifiers, institutional labels, revealing profile imagery, unique searchable passages, or metadata that defeats anonymization. The branded author-facing version can retain LBB and the Full Color Atlas; the submitted reviewer version may need neutral pseudonyms.
+6. Evidence, source selection, and implementation integrity
+The notebook's own evidentiary claims must withstand the standard it encourages visitors to apply. Maintain a source and transformation register for each selected example:
+1. Origin: original human text, original model response, fictional script, Atlas passage, independent source, or visitor response.
+2. Context: date, model/prompt identification where available, edition or source location, audience and purpose, and what is unknown.
+3. Treatment: verbatim excerpt, selection with omissions, paraphrase, annotation, simulated reconstruction, or newly generated material.
+4. Status: verified outside source, contested attribution, unvalidated mathematical construction, open question, or actual consented act.
+5. Presentation: which interface labels and transformations are shown to the visitor and which are hidden behind optional inspection.
+Do not turn a generated committee into independent reviewers, assert model praise as validation of an invention, or retroactively fill missing archival context. Do not present a mathematical expression as a measured law or assume that changing trust changes behavior. A curated example may remain useful even when its provenance is incomplete, provided the gap is explicit.
+
+Minimum implementation audit before submission: the actual LBB build/version and hosting location; proof that the front-facing notebook and page or tab navigation work; functioning Cart interactions or reliable scripted responses; provenance inspection; implemented Refraction Point outcomes; working World Return; no unintended contact with third parties; consent and local-data behavior; offline/replay fallback; accessibility tests; screenshots/video captured from the real software. If any item is absent, mark it planned, not completed.
+7. Evaluation: what would count as learning, and what would not?
+Formative, not yet reported: invite a small, appropriately recruited set of visitors to use the prototype and observe whether they can distinguish (a) generated praise from independent peer assessment, (b) several fictional voices from independent participants, and (c) a source label from source support for the particular claim. Record whether visitors select a relevant next operation, can articulate what evidence is missing, and can contest the Cart's framing.
+
+Also ask whether the source/provenance layer creates excessive reading, attention, memory, motor, or sensory demands. Track where visitors stop, use shortcuts, or misunderstand labels. These observations may reveal burdens introduced by the design, not merely benefits.
+
+For a later comparative study, present the same cases in a conventional chat view and in LBB, counterbalance order, establish evidence-based coding criteria before observing outcomes, and include previously unseen cases. Separate factual provenance mistakes from reasonable differences in interpretation. Enjoyment, compliance with the narrator, or statements such as “I trust AI less” are not evidence on their own of improved decision-making.
+
+Accessible by design: scalable typography; high contrast and adjustable brightness without color-only meaning; logical reading order; keyboard and screen-reader interaction; transcripts and reduced motion; skips and short path; clear source descriptions; no exposure to painful glare; no compulsory personal disclosure. These are design and test requirements, not features to assume exist without verification.
+8. Extended abstract drafting allocation
+The formal submission should be approximately 3,000 words under the current CUI 2027 rules, including figures, tables, appendices, and other body content but excluding references and acknowledgments. This working document is a source and planning draft, not a finished template-compliant abstract.
+Section	Target	Essential argument
+Abstract	250–300 words	LBB is the Living Notebook; Atlas relation; inspected claim transitions; honest outcome status.
+Design question	300–350	When does generated language become apparent authority, and what operation can a visitor perform?
+Related work and conceptual positioning	400–450	Prior art in provenance and reflective AI; Wittgenstein, Austin, McLuhan, legal lens with boundaries.
+Materials and reflexive method	300–350	Atlas and human–AI source register, AI assistance, selection, reconstruction, provenance uncertainty.
+Artifact and interaction design	750–850	LBB as software, five margin labels, core/extended journey, Cart, Refraction Point, World Return.
+Implementation, access, and in-person feasibility	300–350	What is built; hardware, reset, replay/live boundaries, accessibility and anonymity.
+Evaluation and limitations	250–300	Actual tests if done; otherwise prospective formative protocol and limitations.
+Contribution and invitation	100–150	What is reusable and what remains an open research question.
+
+
+9. Official submission and anonymization gates
+The official CUI 2027 Interactivity & Creativity call invites interactive demos and creative installations supported by an approximately 3,000-word extended abstract in anonymized PDF and a video of up to two minutes, with the current submission date listed as March 2027, exact day to be confirmed. The call requires ACM templates and assesses creativity, feasibility, novelty, and in-person engagement. It is reasonable to use the running notebook as the exhibit, provided it can actually be demonstrated; the paper and video remain separate submission requirements.
+
+Anonymization risk: If LBB or Full Color Atlas is publicly associated with the author, retaining those searchable names in the blinded paper, video, file metadata, URL, or quoted passages may defeat double anonymization. Keep this branded working master; prepare a neutral-name review copy in compliance with the official CHI/ACM policy. Do not conceal relevant self-citation through misleading provenance. Reviewers can still receive an accurate account of the work without public-facing branding.
+
+AI use: Under the current CUI page, AI used in the research lifecycle or to build artifacts relevant to the paper's conclusions must be described in the methods. Writing assistance alone is treated differently by the stated ACM policy. Preserve author responsibility for factual accuracy and proper attribution.
+References for development
+1. ACM CUI 2027. Interactivity & Creativity. https://www.cui.hosting.acm.org/2027/submit/interactivity-creativity.html
+2. ACM CUI 2027. Everyday Embodiments. https://www.cui.hosting.acm.org/2027/
+3. Wittgenstein, L. (1953). Philosophical Investigations, especially §§23 and 43. https://www.wittgensteinproject.org/w/index.php/Philosophische_Untersuchungen
+4. Austin, J. L. (1962). How to Do Things with Words. Oxford University Press.
+5. McLuhan, M. (1964). Understanding Media: The Extensions of Man, including its telephone and automation chapters.
+6. Zimmerman, J., Forlizzi, J., & Evenson, S. (2007). Research Through Design as a Method for Interaction Design Research in HCI. CHI 2007. https://doi.org/10.1145/1240624.1240704
+7. Martin-Boyle, A., Leckey, C., Brown, M., & Kaur, H. (2026). PaperTrail: A Claim-Evidence Interface for Grounding Provenance in LLM-based Scholarly Q&A. CHI 2026. https://doi.org/10.1145/3772318.3791101
+8. van der Burg, V., et al. (2026). Reflective AI: A Slow Technology Approach for Design Education. CHI 2026. https://doi.org/10.1145/3772318.3791691
+9. Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27(3), 379–423.
+10. Wheeler, J. A. (1990). Information, Physics, Quantum: The Search for Links. In Complexity, Entropy, and the Physics of Information.
+Editorial status: This is the integrated, branded working proposal for LBB as The Living Notebook and the Full Color Atlas as its written intellectual map. It is not an anonymized ACM PDF, evidence that all described controls currently work, a verified novelty claim, or an evaluated study. The next defensible step is to audit the actual running LBB interface against the visitor path, then record the two-minute demonstration from that working version.
