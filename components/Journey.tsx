@@ -1,6 +1,9 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, BookmarkPlus, CornerUpLeft, Pause, ScanSearch, Send, Sparkles, Square } from 'lucide-react';
+import AtlasArtwork from './AtlasArtwork';
+import ArtworkImage from './ArtworkImage';
+import { artwork } from '@/lib/media';
 import { journeyById, provenanceLabels, sources } from '@/lib/content';
 import type { JourneyId, JourneyProgress } from '@/lib/schema';
 export default function Journey({ id, progress, onUpdate, onSave, onReturn, onSources, onGenerate, onRoute, onStop }: {
@@ -19,6 +22,8 @@ export default function Journey({ id, progress, onUpdate, onSave, onReturn, onSo
   return <section className={`journey-view ${definition.color}`} aria-label={`${definition.title} journey`}>
     <div className="journey-top"><button className="text-button" onClick={onReturn}><CornerUpLeft size={14} /> Back to conversation</button><span>{definition.duration}</span></div>
     <div className="journey-title"><span className="eyebrow">AN OPTIONAL JOURNEY WITHIN LBB</span><h1>{definition.title}</h1><p>{definition.subtitle}</p></div>
+    {id === 'atlas' && <AtlasArtwork />}
+    {id === 'refraction' && <figure className="journey-landscape"><div className="landscape-art"><ArtworkImage art={artwork.refraction} sizes="(max-width: 800px) 90vw, 700px" /></div><figcaption>The Refraction Lab · Runway concept artwork</figcaption></figure>}
     <nav className="journey-steps" aria-label="Journey steps">{definition.steps.map((s, i) => <button key={s.title} aria-current={progress.step === i ? 'step' : undefined} onClick={() => { onUpdate({ step: i }); setShowSources(false); }}><span>0{i + 1}</span>{s.title}</button>)}</nav>
     {!definition.available && <p className="content-notice">Journey framework only. The manuscript has not been supplied or ingested. No passage, character, or testimony is presented as coming from the book.</p>}
     <article className="journey-page"><div className="journey-page-label"><span className="eyebrow">{step.eyebrow}</span><span className="provenance-badge">{provenanceLabels[step.kind]}</span></div><h2 id="journey-step-title" tabIndex={-1}>{step.title}</h2><p className="journey-reading">{step.body}</p>

@@ -1,0 +1,90 @@
+{
+  "sourceCommit": "ee2d3de97489e6e246a001072285c7a13d5231fe",
+  "source": "User-uploaded Runway assets on main",
+  "assets": [
+    {
+      "id": "hero",
+      "kind": "image",
+      "path": "/assets/lbb/images/butterfly-notebook.png",
+      "originalFilename": "A_single_wide_16_9_cinematic_hero_artwork_for_LBB_The_Living_Notebook_website__composition_inspired__0.png",
+      "sha256": "2d0753050652b1d1c45b978e3caf539d8e94203ff6b4146b36ab5e8f49977a9e",
+      "bytes": 4307053,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "id": "cart",
+      "kind": "image",
+      "path": "/assets/lbb/images/exhibit-cart.png",
+      "originalFilename": "A_single_isolated_character_portrait_on_a_clean_light_ivory_background__the_LBB_Exhibit_Cart__a_tiny_0.png",
+      "sha256": "df2356b8395efe14fdfd3bd0f502c99ff8071ee5a90e467662b0ac34e3d6d24d",
+      "bytes": 7088671,
+      "width": 2560,
+      "height": 2560
+    },
+    {
+      "id": "present",
+      "kind": "image",
+      "path": "/assets/lbb/images/museum-present.png",
+      "originalFilename": "A_single_wide_16_9_cinematic_environment_concept_art_of_THE_PRESENT__a_sophisticated_contemporary_in_0.png",
+      "sha256": "3a5c74b6f9c716d49ac6f7132138f369884181529b015fc25cd49c772c022571",
+      "bytes": 4750434,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "id": "possible",
+      "kind": "image",
+      "path": "/assets/lbb/images/museum-possible.png",
+      "originalFilename": "A_single_wide_16_9_cinematic_environment_concept_art_of_THE_POSSIBLE__a_near_future_conceptual_museu_0.png",
+      "sha256": "ba0f4962094ff87e775ef05eec0cc35aae9b666a75a97b3514045014be2e3b0e",
+      "bytes": 4956518,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "id": "refraction",
+      "kind": "image",
+      "path": "/assets/lbb/images/refraction-lab.png",
+      "originalFilename": "Single_wide_cinematic_16_9_environment_image_of_THE_REFRACTION_LAB_within_LBB__refined_contemporary__0.png",
+      "sha256": "733f45681b04083d94a7987266bc4e1605515ca4fa5f6d8e9e88b9fb1cc556ac",
+      "bytes": 5010746,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "id": "notebook",
+      "kind": "image",
+      "path": "/assets/lbb/images/notebook-workspace.png",
+      "originalFilename": "Single_wide_cinematic_16_9_visual_of_a_beautiful_personal_research_notebook_workspace_within_LBB__An_0.png",
+      "sha256": "7dfb96e72d4c2abd2fa67e5bbd98aced09514a42130ac318302a8be515f3769d",
+      "bytes": 4859432,
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "id": "opening",
+      "kind": "video",
+      "path": "/assets/lbb/videos/butterfly-opening.mp4",
+      "originalFilename": "23e511ac-f2bc-4831-ad98-dafa09fa5975.mp4",
+      "sha256": "14c900c45260d5d320ed84641f8338e0c3fbd2d62a2b456b6eb1fd98b925c404",
+      "bytes": 1948428,
+      "width": 1280,
+      "height": 720,
+      "durationSeconds": 3.041667,
+      "audioTracks": 0
+    },
+    {
+      "id": "cart-motion",
+      "kind": "video",
+      "path": "/assets/lbb/videos/exhibit-cart.mp4",
+      "originalFilename": "a189242c-a531-43e9-b22f-550dffb7c48b.mp4",
+      "sha256": "b44827c00cfac1fa98713263bc803b462306605895b74df3b2f736d5f5729d3f",
+      "bytes": 1574514,
+      "width": 960,
+      "height": 960,
+      "durationSeconds": 3.041667,
+      "audioTracks": 0
+    }
+  ]
+}

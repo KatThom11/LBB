@@ -86,3 +86,9 @@ The integrated Living Notebook proposal is preserved verbatim in `docs/LIVING_NO
 - `docs/ARCHITECTURE.md`: context, consent, provenance, and persistence boundaries.
 
 The earlier six-scene prototype is preserved on GitHub branch **`backup/lbb-six-scene-2026-10-28`**, commit `7897b43`. The new application is developed on **`feat/chat-first-living-notebook`**. Older prototype local-storage keys are left intact; prior assent is never silently transferred to a different proposition. No existing museum implementation was imported. Publication and paid API activation require the user's approval.
+
+## Runway artwork and motion
+
+The uploaded `main`-branch media is integrated locally: six original images in `public/assets/lbb/images/` and two silent films in `public/assets/lbb/videos/`, all with short filenames. The butterfly opening has playback controls; the Exhibit Cart has its own play button. Reduced-motion visitors see stills until choosing playback. Present/Possible artwork appears within the optional Atlas, the Lab uses its supplied illustration, and the notebook panel uses the desk artwork. Chat remains available throughout.
+
+See `docs/ASSETS.md` for the inventory, integration points, missing-content notes, and preservation details. Original bytes and names are recorded in `public/assets/lbb/manifest.json`. All referenced assets are present; dedicated Trial artwork and a Past gallery image were not supplied. There are no new credentials or external media services.

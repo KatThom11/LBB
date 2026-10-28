@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { BookOpen, Check, CornerDownLeft, History, PenLine, Plus, X } from 'lucide-react';
+import ArtworkImage from './ArtworkImage';
+import { artwork } from '@/lib/media';
 import { categories, type Category, type NotebookEntry, type Provenance } from '@/lib/schema';
 export interface NoteDraft { text: string; category: Category; origin: 'visitor' | 'scripted' | 'ai-generated'; sourceMessageId?: string; }
 export default function Notebook({ entries, draft, setDraft, onSave, onRevise, onClose, live, selected, onSelect }: {
@@ -13,6 +15,7 @@ export default function Notebook({ entries, draft, setDraft, onSave, onRevise, o
     <div className="notebook-heading"><div className="notebook-symbol"><BookOpen size={19} strokeWidth={1.5} /></div><div><h2>The Living Notebook</h2><span>A place for thoughts in progress.</span></div><button className="icon-button" aria-label="Close notebook" onClick={onClose}><X size={17} /></button></div>
     <div className="notebook-scroll">
       <div className="notebook-intro"><span className="eyebrow">IN THE MARGINS</span><p>Keep an idea.<br /><em>Leave room to change it.</em></p></div>
+      <div className="notebook-landscape"><ArtworkImage art={artwork.notebook} sizes="(max-width: 1100px) 340px, 300px" /></div>
       <form className="note-form" onSubmit={e => { e.preventDefault(); onSave(); }}>
         <label htmlFor="note-category">A place for this thought</label><select id="note-category" value={draft.category} onChange={e => setDraft({ ...draft, category: e.target.value as Category })}>{categories.map(c => <option key={c}>{c}</option>)}</select>
         <label className="sr-only" htmlFor="note-text">Notebook entry</label><textarea id="note-text" rows={5} maxLength={4000} placeholder="An idea, a question, a beautifully inconvenient objection…" value={draft.text} onChange={e => setDraft({ ...draft, text: e.target.value })} />

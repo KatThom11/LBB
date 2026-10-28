@@ -19,3 +19,38 @@
 @media(prefers-reduced-motion:reduce) {*,*:before,*:after {animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
 
 .settings-error {padding:12px;border:1px solid #c5ac89;background:#f5e8d5;color:#72512d;line-height:1.8;}
+
+/* Uploaded Runway artwork stays local and is independent of conversation state. */
+.artwork-image {position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;}
+.artwork-image img {object-fit:cover;}
+.artwork-fallback {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;background:#eeeee3;color:#536747;font-size:11px;line-height:1.7;padding:12px;text-align:center;}
+.welcome-media {max-width:580px;margin:0 auto 33px;position:relative;}
+.motion-artwork {position:relative;overflow:hidden;background:#f3eee3;border:1px solid #d0d4be;isolation:isolate;}
+.opening-motion {aspect-ratio:16/9;border-radius:8px;}
+.motion-artwork video {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;}
+.motion-artwork video.has-frame {opacity:1;}
+.motion-control {position:absolute;z-index:2;bottom:10px;left:10px;display:flex;align-items:center;justify-content:center;gap:6px;min-width:32px;min-height:32px;background:#263a30ed;color:#fffef6;border:1px solid #e9e7d95c;border-radius:5px;padding:7px 10px;font-size:9px;line-height:1.5;}
+.motion-control:focus-visible {outline:3px solid #fff7d2;outline-offset:-4px;}
+.motion-caption {position:absolute;z-index:1;bottom:10px;right:10px;border-radius:4px;padding:7px 9px;background:#263a30ed;color:#fffef6;font-family:var(--font-serif);font-size:12px;line-height:1.5;max-width:65%;text-align:right;}
+.welcome-cart {position:absolute;bottom:-17px;right:15px;width:91px;height:91px;border:4px solid var(--paper);border-radius:50%;box-shadow:0 2px 10px #26362222;z-index:3;}
+.portrait-motion {width:100%;height:100%;border-radius:50%;}
+.portrait-motion .motion-control {bottom:2px;left:auto;right:6px;min-width:27px;min-height:27px;padding:5px;border-radius:50%;}
+.portrait-motion .motion-control>span {display:none;}
+.portrait-motion .artwork-image img {object-fit:contain;}
+.welcome-media+.welcome-kicker {margin-top:0;}
+.message-avatar {position:relative;overflow:hidden;}
+.message-avatar .artwork-image {border-radius:50%;}
+.journey-art.has-artwork {height:85px;border-radius:4px;overflow:hidden;border:1px solid #dbddce;margin-bottom:13px;}
+.notebook-landscape {position:relative;aspect-ratio:2/1;border:1px solid #d6dcc6;border-radius:5px;overflow:hidden;margin:-3px 0 22px;}
+.atlas-artwork {margin:25px 0;}
+.gallery-room-buttons {display:flex;align-items:center;gap:7px;margin-bottom:10px;}
+.gallery-room-buttons button {border:1px solid #bec9a9;background:#f7f8ed;padding:8px 11px;font-size:10px;line-height:1.6;border-radius:4px;color:#536547;}
+.gallery-room-buttons button[aria-pressed='true'] {background:#e0e7d2;border-color:#819965;color:#344b29;}
+.gallery-room-buttons>span {font-size:7px;letter-spacing:1px;color:#56684a;margin-left:auto;}
+.gallery-room-image,.landscape-art {position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #d0d9bf;border-radius:6px;}
+.journey-landscape {margin:24px 0;}
+.journey-landscape figcaption {font-size:9px;line-height:1.7;color:#56684a;text-align:right;margin-top:8px;}
+@media(max-width:480px) {.welcome-media {margin-bottom:29px;}.welcome-cart {width:68px;height:68px;bottom:-14px;right:8px;border-width:3px;}.motion-caption {font-size:10px;bottom:8px;right:8px;padding:5px 7px;max-width:63%;}.motion-control {left:8px;bottom:8px;padding:5px 8px;min-height:30px;}.portrait-motion .motion-control {min-height:24px;min-width:24px;right:1px;bottom:0;}.portrait-motion .motion-control svg {width:11px;}.journey-art.has-artwork {height:52px;margin-bottom:9px;}.gallery-room-buttons {flex-wrap:wrap;}.gallery-room-buttons>span {font-size:6px;}.gallery-room-buttons button {font-size:9px;padding:7px 9px;}}
+/* Leave the opening caption clear of the Cart's picture-in-picture control. */
+.welcome-media .opening-motion .motion-caption {right:116px;max-width:calc(100% - 195px);}
+@media(max-width:480px) {.welcome-media .opening-motion .motion-caption {right:84px;max-width:calc(100% - 155px);}}
