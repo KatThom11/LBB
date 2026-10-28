@@ -1,0 +1,39 @@
+{
+  "created": "2026-10-28",
+  "provider": "Runway",
+  "referenceTaskId": "fc277fcd-1b47-47e8-85c8-5243a3a1afe2",
+  "assets": [
+    {
+      "pose": "welcoming",
+      "taskId": "53ccad80-f704-4d5d-9fe1-053e9a8dec5a",
+      "model": "gpt-image-2.5-flare",
+      "source": "originals/welcoming.png",
+      "web": "welcoming.webp",
+      "variantBrief": "WELCOMING: Three-quarter view angled gently toward the viewer's left, as if rolling up to greet a visitor. All four drawer faces have friendly open eyes and small warm smiles. One front drawer is slightly open, inviting a question. A lively but grounded welcoming stance with both wheels touching the floor."
+    },
+    {
+      "pose": "curious",
+      "taskId": "52d20396-b3c9-4c37-983d-2e73ba9db1e2",
+      "model": "gpt-image-2.5-flare",
+      "source": "originals/curious.png",
+      "web": "curious.webp",
+      "variantBrief": "CURIOUS / CONSIDERING: Near-frontal three-quarter view, body rotated slightly toward the viewer's right. Drawer faces look thoughtfully upward with raised arched brows and small wondering mouths, one face with a gentle questioning tilt. A single blank exhibit card peeks up higher than the others. Convey attention and intellectual curiosity with subtle asymmetry, keeping rigid brass construction physically plausible."
+    },
+    {
+      "pose": "skeptical",
+      "taskId": "31bcbe36-b95a-4e0b-9d66-a81a5d8609a0",
+      "model": "gpt-image-2.5-flare",
+      "source": "originals/skeptical.png",
+      "web": "skeptical.webp",
+      "variantBrief": "SKEPTICAL / CROSS-EXAMINING: Near-frontal view angled slightly toward the viewer's left. Expressive drawer faces have one raised eyebrow, gently narrowed eyes and wry questioning smiles; amused, never hostile or smug. A front drawer is cracked open as if about to produce a counterexample. Keep the exact friendly elegant cart, physical construction and all original details."
+    },
+    {
+      "pose": "delighted",
+      "taskId": "1082b0e3-4918-4f13-90f2-5bbc72340611",
+      "model": "gpt-image-2.5-flare",
+      "source": "originals/delighted.png",
+      "web": "delighted.webp",
+      "variantBrief": "DELIGHTED / SURPRISED: Three-quarter view gently angled toward the viewer's right, all four drawer faces brighten with wide delighted eyes and open joyful smiles. One drawer is extended slightly and a blank card stands up as if an unexpected connection has appeared. Body has a tiny energetic lean while wheels stay grounded. Warm curiosity and a pleasant surprise, not exaggerated cartoon distortion."
+    }
+  ]
+}

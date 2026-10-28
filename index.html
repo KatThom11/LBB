@@ -26,7 +26,7 @@
     <div class="museum-caption"><span>A MUSEUM FOR THE CURIOUS. <span class="caption-extra">NO PRESCRIBED ROUTE.</span></span><span id="model-state" class="tiny-pill" role="status">Checking conversation mode…</span></div>
     <main id="main" class="main-stage">
       <div class="visit-toolbar" id="visit-toolbar" hidden>
-        <div class="guide-identity"><img src="/assets/exhibit-cart.webp" alt="" width="44" height="44" /><div><strong>The Exhibit Cart</strong><span>I carry the exhibits. You decide what they establish.</span></div></div>
+        <div class="guide-identity"><img id="guide-portrait" src="/assets/cart/welcoming.webp" alt="" width="44" height="44" /><div><strong>The Exhibit Cart</strong><span>I carry the exhibits. You decide what they establish.</span></div></div>
         <div class="visit-actions"><button data-panel="connections">Explore connections <span aria-hidden="true">→</span></button><button id="fresh-question">New question <span aria-hidden="true">＋</span></button></div>
       </div>
       <div id="stage-inner" class="stage-inner">
@@ -40,7 +40,7 @@
               <button class="ask-cart-link" data-action="conversation">Ask the Cart <span aria-hidden="true">↓</span></button>
             </div>
             <button class="cart-portrait" data-action="conversation" aria-label="Meet the Exhibit Cart. Ask your own question.">
-              <img src="/assets/exhibit-cart.webp" alt="A gold and teal museum cart with four expressive drawers, paper exhibits, and a butterfly emblem." width="640" height="800" fetchpriority="high" />
+              <img src="/assets/cart/welcoming.webp" alt="A gold and teal museum cart with four smiling drawers, one open to share an exhibit, and a butterfly emblem." width="640" height="800" fetchpriority="high" />
               <span class="portrait-label"><span aria-hidden="true">✧</span> THE EXHIBIT CART <span aria-hidden="true">✧</span></span>
             </button>
           </div>
@@ -70,6 +70,7 @@
         <button class="new-visit" id="new-visit">A fresh question <span aria-hidden="true">＋</span></button>
         <nav class="rail-nav" aria-label="Explore the Atlas">
           <button class="nav-link" data-action="conversation"><span aria-hidden="true">✧</span> Ask the Exhibit Cart</button>
+          <button class="nav-link" data-panel="cart"><span aria-hidden="true">☺</span> Meet the Exhibit Cart</button>
           <button class="nav-link" data-panel="connections"><span aria-hidden="true">◎</span> Explore connections</button>
           <button class="nav-link" data-panel="archive"><span aria-hidden="true">◈</span> The Archive</button>
           <button class="nav-link" data-action="cross-examine"><span aria-hidden="true">⚖</span> Cross-Examination</button>

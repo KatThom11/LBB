@@ -10,6 +10,7 @@ const staticPaths=new Map([
   ['/','index.html'],['/index.html','index.html'],['/styles.css','styles.css'],['/app.js','app.js'],['/content/atlas-content.js','content/atlas-content.js'],
   ['/assets/atlas-welcome.webp','assets/atlas-welcome.webp'],['/assets/exhibit-cart.webp','assets/exhibit-cart.webp']
 ]);
+for(const pose of ['welcoming','curious','skeptical','delighted'])staticPaths.set(`/assets/cart/${pose}.webp`,`assets/cart/${pose}.webp`);
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.webp':'image/webp'};
 
 const server=createServer(async(req,res)=>{

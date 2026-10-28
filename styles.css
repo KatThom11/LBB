@@ -136,6 +136,12 @@ a { color: inherit; text-decoration: none; }
 .drawer label { display: block; font-size: .8rem; margin: .9rem 0 .4rem; }
 .drawer .inline-action { margin: .35rem .35rem .35rem 0; }
 .card-list, .lens-list { display: grid; gap: .7rem; margin-top: 1rem; }
+.cart-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+.cart-gallery figure { margin: 0; min-width: 0; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; }
+.cart-gallery img { display: block; width: 100%; height: auto; background: #fbf8f0; }
+.cart-gallery figcaption { padding: .8rem; }
+.cart-gallery strong { display: block; font: 1.1rem Georgia, serif; color: var(--accent); }
+.cart-gallery figcaption span { display: block; font-size: .75rem; color: var(--muted); margin-top: .4rem; }
 .archive-card, .research-card, .entry-card { border: 1px solid var(--line); background: var(--surface); padding: 1rem; border-radius: 5px; margin: .7rem 0; }
 .archive-card strong { font: 1.2rem Georgia, serif; color: var(--accent); }
 .archive-card p { font-size: .83rem; margin: .5rem 0; }

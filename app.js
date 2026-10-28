@@ -1,6 +1,13 @@
 import { OPEN_INVITATION, PLEDGE, STARTER_SETS, LENSES, THINKERS, RESEARCH_QUESTIONS, CATEGORIES } from './content/atlas-content.js';
 
 const byId = id => document.getElementById(id);
+const CART_POSES = [
+  {id:'welcoming',title:'Welcoming',description:'Four smiling drawers and an exhibit ready to share.',line:'A new question? There is room in the drawer.'},
+  {id:'curious',title:'Curious',description:'Raised eyebrows, upward glances, and a card peeking out.',line:'What would have to be true?'},
+  {id:'skeptical',title:'Skeptical',description:'Raised eyebrows and sideways glances, with a drawer of possible objections.',line:'An elegant claim. Shall we examine it?'},
+  {id:'delighted',title:'Delighted',description:'Bright eyes, open smiles, and a new card emerging from a drawer.',line:'Well, that opens an interesting possibility.'}
+];
+const cartImage = pose => `/assets/cart/${CART_POSES.some(p=>p.id===pose)?pose:'welcoming'}.webp`;
 const STORAGE_KEY = 'full-color-atlas-v1';
 const escapeHTML = text => String(text ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const id = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
@@ -35,6 +42,7 @@ function render() {
   lastQuestion=t?.messages.findLast(m=>m.role==='user')?.text||'';
   $welcome.hidden=Boolean(t?.messages?.length);
   byId('visit-toolbar').hidden=!t?.messages?.length;
+  byId('guide-portrait').src=cartImage(busy?'curious':t?.messages.at(-1)?.cartPose);
   $conversation.hidden=!t?.messages?.length;
   $conversation.replaceChildren();
   if(t?.messages?.length) for(const msg of t.messages) $conversation.appendChild(messageElement(msg));
@@ -45,7 +53,7 @@ function messageElement(msg){
   const article=document.createElement('article');article.className=`message ${msg.role==='user'?'user':'assistant'}`;article.dataset.messageId=msg.id;
   const avatar=document.createElement('div');avatar.className='message-avatar';avatar.setAttribute('aria-hidden','true');
   if(msg.role==='user')avatar.textContent='YOU';
-  else {const portrait=document.createElement('img');portrait.src='/assets/exhibit-cart.webp';portrait.alt='';avatar.appendChild(portrait);}
+  else {const portrait=document.createElement('img');portrait.src=cartImage(msg.cartPose);portrait.alt='';avatar.appendChild(portrait);}
   const body=document.createElement('div');body.className='message-body message-bubble';
   const head=document.createElement('div');head.className='message-head';
   const who=document.createElement('span');who.textContent=msg.role==='user'?'You':'Exhibit Cart';head.appendChild(who);
@@ -102,7 +110,10 @@ function demoReply(q){
 }
 async function send(inputValue=$input.value){
  const text=String(inputValue||'').trim();if(!text||busy)return;busy=true;
- const thread=ensureThread(); const userMsg={id:id(),role:'user',text:text.slice(0,3500),kind:'visitor'}; const answer={id:id(),role:'assistant',text:'',kind:liveEnabled?'live':'demo'};
+ const thread=ensureThread(); const userMsg={id:id(),role:'user',text:text.slice(0,3500),kind:'visitor'};
+ // The artwork reflects an explicit activity, never an inferred visitor mood or a verdict.
+ const cartPose=/\b(cross-examine|on trial|skeptic|counterexample)\b/i.test(text)?'skeptical':/\b(imagine|invent|hypothetical|possible world)\b/i.test(text)?'delighted':'welcoming';
+ const answer={id:id(),role:'assistant',text:'',kind:liveEnabled?'live':'demo',cartPose};
  thread.messages.push(userMsg,answer);thread.updated=Date.now();if(thread.title==='A fresh question')thread.title=text.slice(0,60);lastQuestion=text;$input.value='';render();setStatus('The Exhibit Cart is considering your question…');byId('stop-button').hidden=false;byId('send-button').disabled=true;
  const controller=new AbortController();activeController=controller;
  try{
@@ -127,7 +138,10 @@ function openPanel(which,seed=''){
   closeRail(false);
   const title=byId('drawer-title'),kicker=byId('drawer-kicker');$body.replaceChildren();
   const container=document.createElement('div');
-  if(which==='connections'){
+  if(which==='cart'){
+    title.textContent='A small Cart. A few strong expressions.';kicker.textContent='MEET YOUR GUIDE';
+    container.innerHTML='<p>Curious by default. Open to objections. Occasionally delighted by the contents of a drawer. The Cart hosts the conversation; you decide what the exhibits establish.</p><div class="cart-gallery">'+CART_POSES.map(p=>`<figure><img src="${cartImage(p.id)}" alt="${escapeHTML(p.description)}" width="640" height="800" loading="lazy"/><figcaption><strong>${escapeHTML(p.title)}</strong><span>“${escapeHTML(p.line)}”</span></figcaption></figure>`).join('')+'</div><p><button class="primary-action" id="cart-ask">Bring the Cart a question →</button></p>';
+  } else if(which==='connections'){
     title.textContent='One question. Many ways in.';kicker.textContent='FOLLOW A CONNECTION';
     container.innerHTML='<p id="connections-title"></p><p id="connections-description" class="muted"></p><div id="lens-list" class="lens-list"></div><p class="muted">These are suggested lenses, not evidence that a connection is true. Choose one to draft a question for the Cart; you can edit it before sending.</p>';
   } else if(which==='invitation'){
@@ -157,6 +171,7 @@ function openPanel(which,seed=''){
   } else return;
   $body.appendChild(container);$overlay.hidden=false;byId('app-shell').inert=true;$overlay.querySelector('.drawer').focus();
   if(which==='connections')renderLenses();
+  if(which==='cart')byId('cart-ask').addEventListener('click',()=>{closePanel();$input.focus();});
   $body.querySelectorAll('[data-resource]').forEach(b=>b.addEventListener('click',()=>{const returnFocus=drawerReturnFocus;openPanel(b.dataset.resource);drawerReturnFocus=returnFocus;}));
   if(which==='notebook')renderNotes();
   if(which==='simulation')byId('simulation-form')?.addEventListener('submit',event=>{event.preventDefault();const rule=byId('world-rule').value.trim();const constraint=byId('world-constraint').value.trim();if(rule){closePanel();send(`Imagine a clearly HYPOTHETICAL world with this rule: ${rule}. ${constraint?`Keep this constraint: ${constraint}.`:''} Explore second-order consequences, tradeoffs, opposing fictional BB viewpoints, and the evidence needed before any real-world claim.`);}});
