@@ -1,33 +1,30 @@
-# One artifact, two ways through it
+# The Living Notebook: conversation first
 
-The Living Notebook is both the research artifact and the interactive presentation. LBB is the workspace; the written Full Color Atlas supplies its conceptual foundation. The extended abstract is a separate reviewer-facing account of the research. This repository contains the integrated working proposal supplied on 28 October 2026, the interactive route adapted from it, and the implementation brief. The Working draft view renders the proposal inside LBB. It is not a completed template-compliant paper or an empirical evaluation.
+The chat-first brief in `CHAT_FIRST_DIRECTION.txt` is the controlling product direction. The preserved integrated CUI proposal informs the optional Refraction Lab; it is not a requirement that every visitor enter a six-scene museum.
 
-## Core path: approximately 3–4 minutes
+## A working visitor path
 
-1. **A sentence and a body (35 seconds):** read the authored doorway/step illustration; choose I can imagine, I need context, or I cannot know from this alone, with an optional note.
-2. **The notebook answers back (35 seconds):** compare the original illustration, scripted model-style extension, and human-style revision. Identify a useful possibility, changed claim, question worth testing, or source needed.
-3. **A discovery is announced (40 seconds):** open SHOW FOUNDATION for the unvalidated construct. The original equation is not supplied; no invented expression stands in for it. Cross-examine the Cart’s selection and omissions.
-4. **A room full of agreement (35 seconds):** distinguish fictional speech and simulated rehearsal from an actual visitor response. Agreement, dissent, uncertainty, refusal, and withdrawal all remain possible.
-5. **Refraction Point (45 seconds):** try a synthetic expansion, inspect the bounded source-check dialog, and hold the claim with a reason, route a question for human review, or stop. Only record a real source check if the source has actually been consulted.
-6. **World Return (30 seconds):** compare the original with responses, source-check reports, and disposition. Revise, retain with reasons, narrow, contest, or withhold judgment; NOTHING YET is a valid outside-world outcome. Export a question for human review if useful.
+1. Open LBB. Ask the Exhibit Cart about language, or start with your own thought. Demo responses are labeled scripts and appear as a simulated stream.
+2. Continue chatting, or optionally open the Full Color Atlas from the sidebar or a conversation invitation.
+3. Explore an authored embodied sentence and two philosophical reading prompts. The references are paraphrases with visible limits, not primary excerpts.
+4. Write a theory and save it to the notebook. The first version is kept.
+5. Compare the original, outside-information limits, and provisional judgment in World Return.
+6. Return to the same conversation. Reopen the notebook, revise the theory, and inspect its original in revision history.
 
-## Extended path: approximately 8–10 minutes
+This is a complete implemented path, not a promise of manuscript ingestion, model intelligence in demo mode, or improved judgment.
 
-Select Extended. Follow the same six scenes, allowing roughly 90 seconds each. Read the additional notes and questions, open the Atlas, inspect the narrator's provenance, consider the source check's limits, and examine the World Return record. Durations are estimates; there is no timer or forced progression.
+## Optional Refraction Lab: 3–4 minute core
 
-## Two-minute video outline
+An apparent discovery becomes a foundation inquiry, then a Refraction Point and World Return. GENERATE adds a scripted possibility to the conversation. VERIFY reveals a bounded reading prompt and its limitations. ROUTE downloads a JSON question package without contacting anyone. HOLD records a provisional disposition and a reason. STOP returns to chat and ends an active stream. Additional source reading can take longer; no timer enforces compliance.
 
-- **0:00–0:15:** introduce the notebook as artifact and presentation, with LBB and the written Atlas as its foundation.
-- **0:15–0:40:** mark the sentence, compare the synthetic addition, and open the Atlas.
-- **0:40–1:00:** open the missing-foundation register and cross-examine the authored narrator.
-- **1:00–1:15:** distinguish simulated agreement from the visitor's bounded assent.
-- **1:15–1:40:** show Refraction Point. Open VERIFY without implying a source has been checked; HOLD the claim.
-- **1:40–2:00:** show World Return and the locally downloaded review package.
+The original institutional-collapse expression, source transcript, and independent validation are unavailable. No invented equation substitutes for them. World Return records a visitor's judgment, not a truth score or outside-world achievement.
 
-Use a consented recording or clearly label a researcher-operated demonstration. Curated Replay contains sample choices; it must not be described as participant evidence. This outline is guidance, not a produced video.
+## A Trial of Color
 
-## Conference preparation
+Only an expandable framework is present: testimony, exhibits, cross-examination, reader reflection. The unpublished manuscript has not been supplied or ingested. Placeholder pages say so. There are no invented book quotations, characters, participant accounts, or clinical assessments.
 
-Confirm the actual CUI 2027 track call, artifact rules, abstract length, anonymization, accessibility, and video requirements before submission. No track requirements have been independently verified here. Develop the methods, legal framing, and formative evaluation from the original research materials; do not infer results from a working interface.
+## Future conference video
 
-Before a booth demonstration, run the production build locally and verify it on the intended device. Start a fresh session or choose Curated Replay, then check keyboard navigation and contrast. The app has no external runtime dependencies after its static assets are served. Use `npm start` on port 3000 for a web demo, or serve the self-contained production HTML. No service worker or installable PWA is provided. Direct file navigation is blocked by this cloud browser’s administrator policy, so HTTP serving is the verified preview route.
+A two-minute recording can show opening a conversation, a labeled scripted reply, entering the optional Atlas, saving a theory, returning to chat, and revising it while preserving the original. A Refraction variant can show the five operations and their boundaries. Record the actual running version and disclose demo versus live behavior. This document is a guide, not a produced video.
+
+Conference dates, track eligibility, anonymization, video length, and paper rules in the preserved proposal have not been independently verified. An approved submission will need an audit against the then-current official call and a separate scholarly account of actual methods and evaluation limits. Public publication and paid API activation require user approval.

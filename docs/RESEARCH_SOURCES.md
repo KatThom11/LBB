@@ -33,3 +33,9 @@ The user identified [The Living Notebook (CUI 2027)](https://gemini.google.com/n
 The earlier invented `S = A / U` exhibit has been removed. It is not the equation described by the uploaded draft and must not be represented as such. The earlier notebook session key, `lbb-notebook-v1`, is left intact rather than reinterpreting old assent to a different proposition; the integrated route uses `lbb-notebook-v2`.
 
 For new sources, preserve author/speaker, date when known, edition or version, section or transcript turn, provenance, permissions, transformations, and redactions. Do not infer missing metadata. Source material can inform an Atlas revision without silently overwriting the earlier record. Do not add confidential transcripts, identifying participant data, or unlicensed full texts.
+
+## Subsequent controlling product direction
+
+The later user upload is preserved as `CHAT_FIRST_DIRECTION.txt`. It directs a new chat-first TypeScript application, with the Atlas, A Trial of Color, and Refraction Lab as optional journeys. The earlier proposal above remains a research source, not the primary interface specification. Its original bytes are unchanged.
+
+Current implementation locations are `lib/content.ts` for curated source/journey schemas and data, `lib/demo.ts` for explicitly scripted replies, and `components/LivingNotebook.tsx` for conversation, notebook, and context handoff. Previous `src/` references in the historical register refer to the archived prototype on `backup/lbb-six-scene-2026-10-28`. No Rosebud museum source, assets, private notebooks, or book manuscript were imported.

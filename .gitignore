@@ -3,3 +3,8 @@ dist/
 test-results/
 playwright-report/
 *.local
+.next/
+next-env.d.ts
+*.tsbuildinfo
+.env*
+!.env.example
