@@ -21,7 +21,7 @@ test('Responses stream uses no provider storage and includes only explicitly con
   const response = await route.POST(request({ ...body, shareNotebook: true, notebook: [{ category: 'My Theory', text: 'A visitor-owned theory.', status: 'unverified' }] }));
   expect(response.status).toBe(200); const events = (await response.text()).trim().split('\n').map(s => JSON.parse(s));
   expect(events).toEqual([{ type: 'delta', text: 'A bounded possibility.' }, { type: 'done' }]);
-  const params = mocks.create.mock.calls[0][0]; expect(params.store).toBe(false); expect(params.stream).toBe(true); expect(params.max_output_tokens).toBe(800); expect(params.instructions).toContain('A visitor-owned theory.');
+  const params = mocks.create.mock.calls[0][0]; expect(params.store).toBe(false); expect(params.stream).toBe(true); expect(params.max_output_tokens).toBe(800); expect(params.instructions).toContain('A visitor-owned theory.'); expect(params.instructions).toContain('I carry the exhibits. You decide what they establish.'); expect(params.instructions).toContain('The Bar That Wasn');
 });
 test('provider startup errors are sanitized', async () => {
   mocks.create.mockRejectedValueOnce(new Error('PRIVATE_PROVIDER_DETAIL'));
